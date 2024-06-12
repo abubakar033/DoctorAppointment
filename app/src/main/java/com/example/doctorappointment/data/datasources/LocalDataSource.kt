@@ -18,7 +18,6 @@ class LocalDataSource {
 
 
     val upcomingScheduleDoctor = mutableListOf(
-        UpcomingScheduleDTO(0, "Dr. Usman", "10 Jumada I 2014", "10:22 AM", "Appointment"),
         UpcomingScheduleDTO(1, "Dr. Joseph Brostito", "Sunday, 12 June", "11:00 - 12:00 AM", "Dental Specialist"),
         UpcomingScheduleDTO(2, "Dr. Emily Carter", "Monday, 13 June", "09:00 - 10:00 AM", "Cardiologist"),
         UpcomingScheduleDTO(3, "Dr. Sarah Lee", "Tuesday, 14 June", "02:00 - 03:00 PM", "Neurologist"),

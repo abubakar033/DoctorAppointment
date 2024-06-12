@@ -17,10 +17,9 @@ class HomeViewmodel(private val homeUseCase: HomeUseCase) : ViewModel() {
 
 
     init {
-
         fetchHomeData()
     }
-    fun fetchHomeData() {
+   private fun fetchHomeData() {
         viewModelScope.launch(Dispatchers.IO) {
             val data = homeUseCase.execute()
             _homeDataState.value = data

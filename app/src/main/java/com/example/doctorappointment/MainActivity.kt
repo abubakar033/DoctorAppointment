@@ -7,7 +7,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate){
 
-
     override fun initViews() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment

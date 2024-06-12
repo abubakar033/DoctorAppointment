@@ -1,4 +1,4 @@
-package com.example.doctorappointment
+package com.example.doctorappointment.app
 
 import android.app.Application
 import com.example.doctorappointment.di.appModule

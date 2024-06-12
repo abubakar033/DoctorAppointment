@@ -15,9 +15,15 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(FragmentScheduleBinding::inflate){
+class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(FragmentScheduleBinding::inflate) {
 
     override fun onFragmentCreated() {
+        setupViewPagerWithTabs()
+        customizeTabViews()
+        setupTabSelectionListener()
+    }
+
+    private fun setupViewPagerWithTabs() {
         val adapter = ViewPagerAdapter(requireActivity())
         binding.viewpager.adapter = adapter
 
@@ -25,62 +31,53 @@ class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(FragmentScheduleB
             tab.text = adapter.getPageTitle(position)
         }.attach()
 
-        addSpace(binding.tabLayout)
-        for (i in 0 until binding.tabLayout.getTabCount()) {
-            val tab: TabLayout.Tab = binding.tabLayout.getTabAt(i)!!
-            if (tab != null) {
-                tab.setCustomView(createTabView(adapter.getPageTitle(i)!! , 0))
-            }
+        addSpaceToTabs()
+    }
+
+    private fun customizeTabViews() {
+        val adapter = binding.viewpager.adapter as ViewPagerAdapter
+        for (i in 0 until binding.tabLayout.tabCount) {
+            val tab = binding.tabLayout.getTabAt(i)
+            tab?.customView = createTabView(adapter.getPageTitle(i)!!, i)
         }
+    }
 
-
+    private fun setupTabSelectionListener() {
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-
-                if (tab.customView != null) {
-                    val textView = tab.customView!!.findViewById<TextView>(R.id.tv_tab_item)
-                    textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.light_blue_100))
-                }
-                addSpace(binding.tabLayout)
+                updateTabTextColor(tab, R.color.light_blue_100)
+                addSpaceToTabs()
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
-                if (tab.customView != null) {
-                    val textView = tab.customView!!.findViewById<TextView>(R.id.tv_tab_item)
-                    textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.light_gray))
-                }
+                updateTabTextColor(tab, R.color.light_gray)
             }
 
-            override fun onTabReselected(tab: TabLayout.Tab) {
-
-            }
+            override fun onTabReselected(tab: TabLayout.Tab) {}
         })
-
     }
 
-    private fun createTabView(tabText: String , itemPosition : Int): View {
+    private fun createTabView(tabText: String, itemPosition: Int): View {
         val view = LayoutInflater.from(requireContext()).inflate(R.layout.custom_tablayout_item, null)
         val textView = view.findViewById<TextView>(R.id.tv_tab_item)
-        if (itemPosition ==0){
-            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.light_blue_100))
-        }
-        else{
-            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.light_gray))
-        }
+        val colorRes = if (itemPosition == 0) R.color.light_blue_100 else R.color.light_gray
+        textView.setTextColor(ContextCompat.getColor(requireContext(), colorRes))
         textView.text = tabText
         return view
     }
 
-    private fun addSpace(mTabLayout: TabLayout){
-        for (i in 0 until mTabLayout.getTabCount()) {
-            val tab = (mTabLayout.getChildAt(0) as ViewGroup).getChildAt(i)
-            val p = tab.layoutParams as MarginLayoutParams
-            p.setMargins(0, 0, 20, 0)
+    private fun updateTabTextColor(tab: TabLayout.Tab, colorResId: Int) {
+        tab.customView?.findViewById<TextView>(R.id.tv_tab_item)?.setTextColor(
+            ContextCompat.getColor(requireContext(), colorResId)
+        )
+    }
+
+    private fun addSpaceToTabs() {
+        for (i in 0 until binding.tabLayout.tabCount) {
+            val tab = (binding.tabLayout.getChildAt(0) as ViewGroup).getChildAt(i)
+            val params = tab.layoutParams as ViewGroup.MarginLayoutParams
+            params.setMargins(0, 0, 20, 0)
             tab.requestLayout()
         }
     }
-
-
-
-
 }

@@ -45,7 +45,7 @@ class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(FragmentScheduleB
     private fun setupTabSelectionListener() {
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                updateTabTextColor(tab, R.color.light_blue_100)
+                updateTabTextColor(tab, R.color.blue_detail_btn)
                 addSpaceToTabs()
             }
 
@@ -60,7 +60,7 @@ class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(FragmentScheduleB
     private fun createTabView(tabText: String, itemPosition: Int): View {
         val view = LayoutInflater.from(requireContext()).inflate(R.layout.custom_tablayout_item, null)
         val textView = view.findViewById<TextView>(R.id.tv_tab_item)
-        val colorRes = if (itemPosition == 0) R.color.light_blue_100 else R.color.light_gray
+        val colorRes = if (itemPosition == 0) R.color.blue_detail_btn else R.color.light_gray
         textView.setTextColor(ContextCompat.getColor(requireContext(), colorRes))
         textView.text = tabText
         return view

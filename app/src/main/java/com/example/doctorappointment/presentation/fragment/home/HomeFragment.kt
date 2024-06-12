@@ -1,4 +1,4 @@
-package com.example.doctorappointment.presentation.fragment
+package com.example.doctorappointment.presentation.fragment.home
 
 
 import com.example.doctorappointment.presentation.adapter.NearDoctorAdapter

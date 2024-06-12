@@ -15,7 +15,12 @@ class UpcomingScheduleViewModel(private val upComingScheduleUseCase: UpComingSch
     private val _upcomingScheduleState = MutableStateFlow<List<UpcomingScheduleDTO>>(emptyList())
     val upcomingScheduleState: StateFlow<List<UpcomingScheduleDTO>> = _upcomingScheduleState.asStateFlow()
 
-    fun fetchUpcomingSchedules() {
+
+    init {
+
+        fetchUpcomingSchedules()
+    }
+   private fun fetchUpcomingSchedules() {
         viewModelScope.launch(Dispatchers.IO) {
             val data = upComingScheduleUseCase.execute()
             _upcomingScheduleState.value = data

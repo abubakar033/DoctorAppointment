@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.ismaeldivita.chip.navigation.bar)
+    implementation (libs.koin.android.v353)
     implementation (libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

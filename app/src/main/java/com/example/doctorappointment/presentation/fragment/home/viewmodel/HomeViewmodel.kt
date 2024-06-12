@@ -16,6 +16,10 @@ class HomeViewmodel(private val homeUseCase: HomeUseCase) : ViewModel() {
     val homeDataState: StateFlow<List<NearDoctorDTO>> = _homeDataState.asStateFlow()
 
 
+    init {
+
+        fetchHomeData()
+    }
     fun fetchHomeData() {
         viewModelScope.launch(Dispatchers.IO) {
             val data = homeUseCase.execute()

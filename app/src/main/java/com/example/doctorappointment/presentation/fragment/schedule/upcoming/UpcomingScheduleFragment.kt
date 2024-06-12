@@ -6,30 +6,35 @@ import com.example.doctorappointment.databinding.FragmentUpcomingScheduleBinding
 import com.example.doctorappointment.presentation.base.BaseFragment
 
 
+
+import androidx.lifecycle.lifecycleScope
+import com.example.doctorappointment.presentation.fragment.schedule.viewmodel.UpcomingScheduleViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+
 class UpcomingScheduleFragment : BaseFragment<FragmentUpcomingScheduleBinding>(FragmentUpcomingScheduleBinding::inflate){
     private lateinit var adapter: UpcomingScheduleAdapter
-
-
-    val doctorList = mutableListOf(
-        UpcomingScheduleDTO(0, "Dr. Usman", "10 Jumada I 2014", "10:22 AM", "Appointment"),
-        UpcomingScheduleDTO(1, "Dr. Joseph Brostito", "Sunday, 12 June", "11:00 - 12:00 AM", "Dental Specialist"),
-        UpcomingScheduleDTO(2, "Dr. Emily Carter", "Monday, 13 June", "09:00 - 10:00 AM", "Cardiologist"),
-        UpcomingScheduleDTO(3, "Dr. Sarah Lee", "Tuesday, 14 June", "02:00 - 03:00 PM", "Neurologist"),
-        UpcomingScheduleDTO(4, "Dr. Michael Smith", "Wednesday, 15 June", "10:00 - 11:00 AM", "Dermatologist"),
-        UpcomingScheduleDTO(5, "Dr. Olivia Brown", "Thursday, 16 June", "01:00 - 02:00 PM", "Pediatrician"),
-        UpcomingScheduleDTO(6, "Dr. William Johnson", "Friday, 17 June", "03:00 - 04:00 PM", "Orthopedic"),
-        UpcomingScheduleDTO(7, "Dr. Ava Davis", "Saturday, 18 June", "11:00 AM - 12:00 PM", "Ophthalmologist"),
-        UpcomingScheduleDTO(8, "Dr. James Wilson", "Sunday, 19 June", "08:00 - 09:00 AM", "Gastroenterologist"),
-        UpcomingScheduleDTO(9, "Dr. Isabella Martinez", "Monday, 20 June", "12:00 - 01:00 PM", "Oncologist")
-    )
-
+    private val upcomingScheduleViewModel : UpcomingScheduleViewModel by viewModel()
 
     override fun onFragmentCreated() {
-      adapter = UpcomingScheduleAdapter()
+        setupAdapter()
+        observeData()
+
+    }
+
+    private fun observeData() {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
+            upcomingScheduleViewModel.upcomingScheduleState.collect { dataState ->
+                adapter.submitList(dataState)
+            }
+        }
+    }
+
+    private fun setupAdapter() {
+        adapter = UpcomingScheduleAdapter()
         binding.rvUpcomingSchedule.adapter = adapter
-        adapter.submitList(doctorList)
-
-
     }
 
 

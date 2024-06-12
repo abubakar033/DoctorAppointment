@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.fragment.HomeFragment">
+
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/hello"
+        android:textColor="@color/light_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/name"
+        android:textColor="@color/black_text_color"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hello" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/user_img"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_hello" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_blue_doctor_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_doctor"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/iv_user"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+    <TextView
+
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Dr. Imran Syahir"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_doctor"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="General Doctor"
+        android:textColor="@color/off_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_doctor_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_doctor_name" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_doctor"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/iv_doctor" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/boder_line"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/iv_doctor" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_calender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_calendar_white"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/iv_line"
+        app:layout_constraintTop_toBottomOf="@+id/iv_line" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="Sunday, 12 June"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
+        app:layout_constraintStart_toEndOf="@+id/iv_calender"
+        app:layout_constraintTop_toTopOf="@+id/iv_calender"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_clock"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_line" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="11:00 - 12:00 AM"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_schedule"
+        app:layout_constraintStart_toEndOf="@+id/iv_schedule"
+        app:layout_constraintTop_toTopOf="@+id/iv_schedule"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_search"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+
+    <androidx.appcompat.widget.SearchView
+        style="@style/CustomSearchViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="3dp"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/iv_search"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:queryBackground="@null"
+        app:queryHint="Search doctor or health issue"
+        app:searchIcon="@null" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_covid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/icon_covid"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+    <TextView
+        android:id="@+id/tv_covid"
+        style="@style/HomeTextViewStyle"
+        app:layout_constraintTop_toBottomOf="@+id/iv_covid"
+        app:layout_constraintStart_toStartOf="@+id/iv_covid"
+        app:layout_constraintEnd_toEndOf="@+id/iv_covid"
+        android:layout_marginTop="8dp"
+        android:text="@string/covid_19"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_doctor_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/icon_doctor"
+        app:layout_constraintEnd_toStartOf="@+id/iv_medicine"
+        app:layout_constraintStart_toEndOf="@+id/iv_covid"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        style="@style/HomeTextViewStyle"
+        app:layout_constraintTop_toBottomOf="@+id/iv_doctor_icon"
+        app:layout_constraintStart_toStartOf="@+id/iv_doctor_icon"
+        app:layout_constraintEnd_toEndOf="@+id/iv_doctor_icon"
+        android:layout_marginTop="8dp"
+        android:text="@string/doctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/icon_link"
+        app:layout_constraintEnd_toStartOf="@+id/iv_hospital"
+        app:layout_constraintStart_toEndOf="@+id/iv_doctor_icon"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+    <TextView
+        style="@style/HomeTextViewStyle"
+        app:layout_constraintTop_toBottomOf="@+id/iv_medicine"
+        app:layout_constraintStart_toStartOf="@+id/iv_medicine"
+        app:layout_constraintEnd_toEndOf="@+id/iv_medicine"
+        android:layout_marginTop="8dp"
+        android:text="@string/medicine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/icon_hospital"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+
+    <TextView
+        style="@style/HomeTextViewStyle"
+        app:layout_constraintTop_toBottomOf="@+id/iv_hospital"
+        app:layout_constraintStart_toStartOf="@+id/iv_hospital"
+        app:layout_constraintEnd_toEndOf="@+id/iv_hospital"
+        android:layout_marginTop="8dp"
+        android:text="@string/hospital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_near_doctor"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_covid"
+        android:layout_marginTop="32dp"
+        android:textSize="16sp"
+        android:text="@string/near_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_near_doctor"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/near_doctor_rv_item"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_near_doctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

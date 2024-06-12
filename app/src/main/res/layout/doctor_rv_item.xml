@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/br_white_doctor_profile"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="16dp"
+    android:elevation="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_doctor"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/iv_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Dr. Imran Syahir"
+        android:textColor="@color/black_name"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_doctor"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_doctor_profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="General Doctor"
+        android:textColor="@color/light_gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_doctor_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_doctor_name" />
+
+
+
+    <View
+        android:id="@+id/iv_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.3"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_doctor" />
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_calender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_calendar_gray"
+        app:layout_constraintBottom_toTopOf="@+id/btn_detail"
+        app:layout_constraintStart_toStartOf="@+id/iv_line"
+        app:layout_constraintTop_toBottomOf="@+id/iv_line" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start"
+        android:text="Sunday, 12 June"
+        android:textColor="@color/light_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
+        app:layout_constraintEnd_toStartOf="@+id/iv_schedule"
+        app:layout_constraintStart_toEndOf="@+id/iv_calender"
+        app:layout_constraintTop_toTopOf="@+id/iv_calender"
+       />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_clock_gray"
+        app:layout_constraintBottom_toTopOf="@+id/btn_detail"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_line" />
+
+    <TextView
+        android:id="@+id/tv_schedule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start"
+        android:layout_marginHorizontal="10dp"
+        android:text="11:00 - 12:00 AM"
+        android:textColor="@color/light_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_schedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_schedule"
+        app:layout_constraintTop_toTopOf="@+id/iv_schedule"
+      />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_detail"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/bg_blue_btn"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/detail"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/blue_detail_btn"
+        android:layout_height="40dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

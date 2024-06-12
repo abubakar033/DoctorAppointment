@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#666666">
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/selector_home"
+        app:cnb_iconColor="@color/light_blue_100"/>
+    <item
+        android:id="@+id/schedule"
+        android:title="@string/schedule"
+        android:icon="@drawable/selector_schedule"
+        app:cnb_iconColor="@color/light_blue_100"
+      />
+
+    <item
+        android:id="@+id/message"
+        android:title="@string/message"
+        android:icon="@drawable/icon_message"
+        app:cnb_iconColor="@color/light_blue_100"
+       />
+
+
+    <item
+        android:id="@+id/person"
+        android:title="Profile"
+        android:icon="@drawable/icon_profile"
+        app:cnb_iconColor="@color/light_blue_100"
+       />
+</menu>

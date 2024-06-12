@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Doctor Appointment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello,</string>
+    <string name="name">Hi James</string>
+    <string name="covid_19">Covid 19</string>
+    <string name="doctor">Doctor</string>
+    <string name="medicine">Medicine</string>
+    <string name="hospital">Hospital</string>
+    <string name="near_doctor">Near Doctor</string>
+    <string name="home">Home</string>
+    <string name="schedule">Schedule</string>
+    <string name="message">Message</string>
+    <string name="detail">Detail</string>
+</resources>
